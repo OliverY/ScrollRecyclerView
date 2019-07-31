@@ -35,6 +35,17 @@ class CustomScrollLinearLayoutManager @JvmOverloads constructor(
                 return MILLISECONDS_PRE_INCH / displayMetrics.density
             }
 
+            // 滑动到中间
+//            override fun calculateDtToFit(
+//                viewStart: Int,
+//                viewEnd: Int,
+//                boxStart: Int,
+//                boxEnd: Int,
+//                snapPreference: Int
+//            ): Int {
+//                return (boxStart + (boxEnd - boxStart)/2) - (viewStart + (viewEnd - viewStart)/2) // 中间点减中间点
+//            }
+
             override fun getVerticalSnapPreference(): Int {
                 return if (snapToBounds != -2) {
                     snapToBounds

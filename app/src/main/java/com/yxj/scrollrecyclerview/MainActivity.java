@@ -7,8 +7,6 @@ import android.widget.*;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DefaultItemAnimator;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-import com.github.library.BaseRecyclerAdapter;
-import com.github.library.BaseViewHolder;
 
 import java.util.ArrayList;
 import java.util.List;
