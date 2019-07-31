@@ -1,23 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   android:orientation="vertical">
 
     <EditText
-        android:id="@+id/et_num"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+            android:id="@+id/et_num"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toLeftOf="@+id/btn_scroll"
+            android:inputType="number"
+            app:layout_constraintHorizontal_chainStyle="spread"/>
 
     <Button
-        android:id="@+id/btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="srcoll to" />
+            android:id="@+id/btn_scroll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_num"
+            app:layout_constraintLeft_toRightOf="@+id/et_num"
+            app:layout_constraintRight_toLeftOf="@+id/btn_add_last"
+            android:text="srcoll"/>
 
-    <com.yxj.scrollrecyclerview.ScrollRecyclerView
-        android:id="@+id/recycler"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+    <Button
+            android:id="@+id/btn_add_last"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_num"
+            app:layout_constraintLeft_toRightOf="@+id/btn_scroll"
+            app:layout_constraintRight_toLeftOf="@+id/cb_fast_slow"
+            android:text="add last"/>
 
-</LinearLayout>
+    <CheckBox
+            android:id="@+id/cb_fast_slow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_num"
+            app:layout_constraintBottom_toBottomOf="@+id/et_num"
+            app:layout_constraintLeft_toRightOf="@+id/btn_add_last"
+            app:layout_constraintRight_toRightOf="@+id/cb_start_end"
+            android:text="fast"/>
+
+    <CheckBox
+            android:id="@+id/cb_start_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="@+id/et_num"
+            app:layout_constraintBottom_toBottomOf="@+id/et_num"
+            app:layout_constraintLeft_toRightOf="@+id/cb_fast_slow"
+            app:layout_constraintRight_toRightOf="parent"
+            android:text="start"/>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintTop_toBottomOf="@+id/btn_scroll"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        <com.yxj.scrollrecyclerview.ScrollRecyclerView
+                android:id="@+id/recycler"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"/>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
