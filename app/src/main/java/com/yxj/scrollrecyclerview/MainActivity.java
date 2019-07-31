@@ -95,6 +95,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+
+        recycler.scrollToPosition(adapter.getData().size() - 1);
     }
 
     @Override

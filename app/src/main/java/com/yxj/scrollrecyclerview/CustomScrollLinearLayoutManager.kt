@@ -35,16 +35,6 @@ class CustomScrollLinearLayoutManager @JvmOverloads constructor(
                 return MILLISECONDS_PRE_INCH / displayMetrics.density
             }
 
-//            override fun calculateDtToFit(
-//                viewStart: Int,
-//                viewEnd: Int,
-//                boxStart: Int,
-//                boxEnd: Int,
-//                snapPreference: Int
-//            ): Int {
-//                return super.calculateDtToFit(viewStart, viewEnd, boxStart, boxEnd, snapPreference)
-//            }
-
             override fun getVerticalSnapPreference(): Int {
                 return if (snapToBounds != -2) {
                     snapToBounds
